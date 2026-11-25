@@ -10,7 +10,7 @@ require (
 	github.com/adrg/xdg v0.5.3
 	github.com/spf13/pflag v1.1.0
 	golang.org/x/exp v0.0.0-20260908205506-85c1c2202aba
-	tuios.dev/vt v0.3.4-0.20261125020754-dad9e04b9ac7
+	tuios.dev/vt v0.3.4-0.20261125024624-da334acfb991
 )
 
 require (
