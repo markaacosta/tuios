@@ -658,6 +658,9 @@ type connState struct {
 	conn     net.Conn
 	clientID string
 	hello    *HelloPayload
+	// features is what this client and this daemon both listed in the
+	// handshake. See features.go.
+	features FeatureSet
 	done     chan struct{}
 	doneOnce sync.Once // gates close(done) so shutdown is safe to call twice
 	sendMu   sync.Mutex
