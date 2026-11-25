@@ -19344,3 +19344,19 @@ Repeat from `e2e/tui` with
 
 Repeat from `e2e/tui` with
 `TUIOS_E2E=1 TUIOS_E2E_BIN=/path/to/tuios go test -count=1 -run '^TestIdleGivesHeapBack$' -v .`.
+
+## tuios ls names the scratch pane
+
+`TestScratchTerminalShowsOneShell` shows the scratch terminal in session
+work, which has one ordinary pane. `tuios ls` must count the scratch pane
+apart and name it: "1 pane + 1 scratch".
+
+Run on 2026-11-25 on Linux (amd64). The control is a build of main.
+
+| Control | The test fails with | Result |
+|---------|---------------------|--------|
+| ls counts the scratch pane as a plain window (main) | "tuios ls does not name the scratch pane" | **caught** |
+| ls counts the rail pane as a scratch pane (the first head of this branch), run with `TestRailPaneSection` | "tuios ls names the rail pane a scratch pane" | **caught** |
+
+Repeat from `e2e/tui` with
+`TUIOS_E2E=1 TUIOS_E2E_BIN=/path/to/tuios go test -count=1 -run '^TestScratchTerminalShowsOneShell$' -v .`.
